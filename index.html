@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>date</title>
+</head>
+<body>
+     <div id="wrapper">   </div>
+        
+
+        <script>
+          
+        //    let dt= new Date()
+        //    document.write (dt)
+
+        setInterval ( ()=> {
+            
+            document.querySelector("#wrapper").innerHTML="";
+            let clock=""
+            const dt= new Date()
+            clock +=" " + getDayName(dt.getDay());
+            clock += "  "+dt. getDate();
+            clock +=" / " +  getMonthName((dt.getMonth()+1));
+            clock +=" / " +  dt.getFullYear();
+            clock += "   " + dt.getHours();
+            clock += " : " +  dt.getMinutes();
+            clock += ":" +appendZero (dt.getSeconds());
+            document.querySelector("#wrapper").innerHTML=clock;
+
+        },1000)
+
+        function getDayName(Number){
+            const days =[ " sunday","monday","tuesday","wednesdat","thrusday","friday","satarday",]
+            return days [Number]
+        }
+
+        function getMonthName(Number){
+         
+            const month =[ "january", "february","march","april","may","june", "july","augusyt","september","octomber","november","decrmber"]
+            return month [Number - 1]
+        }
+        function appendZero(number){
+            return (number <10)? "0"+ number: number
+
+        }
+
+         
+
+          
+
+        </script>
+</body>
+</html>
